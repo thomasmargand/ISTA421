@@ -51,17 +51,43 @@ A default route tells the MVC Framework that it should send requests that arrive
 
 11. What is ORM? Are we employing this technique? If so how?
 
-An ORM is an object relational mapper. 
+An ORM is an object relational mapper. It presents the tables, columns, and rows of a relational database through regular C# objects. It makes it much easier to incorporate a database into your program.  We have been using the entity framework ORM which prevents us from having to manually input SQL source code using ADO.NET directly.
+
 12. How many ways can you add Database support to your solution? Name at least one way.
+
+There are a number of different ways to add database support to a solution.  The way we have learned is through the entity framework using SQL server and the LocalDB feature. (pg 169)
+
 13. What is a context class? Be specific.
+
+A context class is a go between that will associate the model with the database when implementing a database in an MVC program.
+
 14. How are optional parameters used within this chapter, give examples.
+
+One example is in implementing pagination into the view.  When  declaring the method ViewResult to display the page we set the default page value to 1. By setting a default value for a parameter we have made that parameter optional meaning if the parameter is omitted in the method call then it will default to whatever we set it to, in this case 1. We did something similar for the default routing.
+
 15. What does TDD mean?
 
 Test Driven Development.
 
 16. What method is used in TDD to verify the success or failure of the code?
+
+Unit testing is most common however, integration testing can also be used.  The idea being that before the code is written the tests are created from the program requirements and then the code is written to pass the tests.
+
 17. What are Html Helpers?
+
+Using the HTML Helper class, we can create HTML Controls programmatically. HTML Helpers are used in View to render HTML content. HTML Helpers (mostly) is a method that returns a string. It is not mandatory to use HTML Helper classes for building an ASP.NET MVC application. We can build an ASP.NET MVC application without using them, but HTML Helpers helps in the rapid development of a view. HTML Helpers are more lightweight as compared to ASP.NET Web Form controls as they do not use ViewState and do not have event models.
+(https://dzone.com/articles/working-with-built-in-html-helper-classes-in-aspne)
+
 18. Breakdown this expression:
 a. @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+
+This is a method call to an HTML helper, specifically one for creating a pagination index. An object is passed from the modelView to the HTML helper.
+
 b. What does MvcHtmlString represent? How is it used?
+
+It represents an HTML encoded string that should not be encoded again. It initializes a new instance of the MvcHtmlString class.
+
 19. What is Bootstrap? What is it used for?
+
+Bootstrap is currently the most popular web framework for developing responsive web applications. It offers a number of features and benefits that can improve your users' experience with your web site, whether you're a novice at front-end design and development or an expert. Bootstrap is deployed as a set of CSS and JavaScript files, and is designed to help your website or application scale efficiently from phones to tablets to desktops.
+(https://docs.microsoft.com/en-us/aspnet/core/client-side/bootstrap?view=aspnetcore-2.1)
