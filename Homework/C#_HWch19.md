@@ -48,8 +48,3 @@ An iterator is a block of code that yields an ordered sequence of values. (pg 43
 10. What does yield do?
 
 The yield keyword indicates the value that should be returned by each iteration.  (pg 432)
-
-**Exercise 9 help**
-hash a string...use md5? String.GetHash Method()
-get user input...place it in an array?
-compare strings
